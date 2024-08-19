@@ -44,3 +44,25 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 $conn->close();
 ?>
+
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Update Profile</title>
+  </head>
+  <body>
+    <div class="form-container">
+      <h1>Update Profile</h1>
+      <form action="update.php" method="POST">
+        <label for="new_username">New Username:</label>
+        <input type="text" id="new_username" name="new_username" required />
+        <label for="new_password">New Password:</label>
+        <input type="password" id="new_password" name="new_password" required />
+        <input type="submit" value="Update" />
+      </form>
+    </div>
+  </body>
+</html>
