@@ -3,7 +3,7 @@ session_start(); // Start the session
 
 // Ensure the user is logged in
 if (!isset($_SESSION['username'])) {
-    header("Location: login.php");
+    header("Location: login.html");
     exit();
 }
 
