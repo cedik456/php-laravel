@@ -3,7 +3,7 @@ session_start(); // Start the session
 
 // Ensure the user is logged in
 if (!isset($_SESSION['username'])) {
-    header("Location: login.html");
+    header("Location: login.php");
     exit();
 }
 
@@ -39,18 +39,18 @@ $conn->close();
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Dashboard</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <h1>Welcome, <?php echo htmlspecialchars($user['username']); ?>!</h1>
-    <p>Email: <?php echo htmlspecialchars($user['email']); ?></p>
-    <div class="button-container">
-        <a href="update.html">
-            <button>Update Profile</button>
-        </a>
-        <form action="logout.php" method="POST" style="display: inline;">
-            <input type="submit" name="logout" value="Logout">
-        </form>
+    <div class="wrapper">
+        <h1>Welcome, <?php echo htmlspecialchars($user['username']); ?>!</h1>
+        <p>Email: <a href="#"><?php echo htmlspecialchars($user['email']); ?></a></p>
+            <a href="update.php">
+                <button>Update Profile</button>
+            </a>
+            <form action="logout.php" method="POST">
+                <input type="submit" name="logout" value="Logout" id="logout">
+            </form>
     </div>
 </body>
 </html>
